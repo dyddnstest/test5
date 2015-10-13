@@ -1,0 +1,18 @@
+<form ng-controller="textareaController">
+	<div class="form-group">
+		<label for="textarea-value">Default Value</label>
+		<input type="{{meta.type}}" class="form-control" id="textarea-value" placeholder="기본값을 입력하세요." ng-model="meta.value" />
+	</div>
+	<div class="form-group">
+		<label for="textarea-placeholder">Placeholder</label>
+		<input type="text" class="form-control" id="textarea-placeholder" placeholder="placeholder를 입력하세요." ng-model="meta.placeholder"/>
+	</div>
+	<div class="form-group">
+		<label for="textarea-placeholder">Disabled</label>
+		<select class="form-control" ng-model="disabledItem" ng-options="item for item in disabledItems" ng-change="disabledChange();">
+			
+		</select>
+	</div>
+
+	<button type="submit" class="btn btn-danger" ng-click="removeComp($event);">Delete</button>
+</form>

@@ -1,0 +1,23 @@
+<form name="myForm" ng-controller="inputController">
+	<div class="form-group">
+		<label for="label-text">Field Type</label>
+		<select class="form-control" ng-model="selectedItem" ng-options="item.type for item in selectedItems" ng-change="typeChange();">
+			
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="label-value">Default Value</label>
+		<input type="{{meta.type}}" class="form-control" id="label-value" placeholder="기본값을 입력하세요." ng-model="meta.value" />
+	</div>
+	<div class="form-group">
+		<label for="input-placeholder">Placeholder</label>
+		<input type="text" class="form-control" id="input-placeholder" placeholder="placeholder를 입력하세요." ng-model="meta.placeholder"/>
+	</div>
+	<div class="form-group">
+		<label for="input-placeholder">Disabled</label>
+		<select class="form-control" ng-model="disabledItem" ng-options="item for item in disabledItems" ng-change="disabledChange();">
+			
+		</select>
+	</div>
+	<button type="submit" class="btn btn-danger" ng-click="removeComp($event);">Delete</button>
+</form>

@@ -1,0 +1,22 @@
+<form ng-controller="labelController">
+	<div class="form-group">
+		<label for="label-text">Text</label>
+		<input type="text" class="form-control" id="label-text" placeholder="텍스트를 입력하세요" ng-model="meta.value">
+	</div>
+	<div class="form-group">
+		<label for="label-size">Size</label>
+		<input type="number" class="form-control" id="label-size" placeholder="사이즈를 입력하세요" ng-model="meta.fontSize">
+	</div>
+	<div class="form-group">
+		<label for="label-weight">굵기</label>
+		<select class="form-control" ng-model="fontWeightItem" ng-options="item for item in fontWeightItems" ng-change="fontWeightChange();">
+			
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="label-text">색상</label>
+		<input type="text" colorpicker class="form-control" id="headerText-color" placeholder="색상 입력하세요" ng-model="meta.color">
+	</div>
+
+	<button type="submit" class="btn btn-danger" ng-click="removeComp($event);">Delete</button>
+</form>

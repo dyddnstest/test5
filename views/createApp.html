@@ -1,0 +1,47 @@
+﻿<section class="hbox">
+	<section class="vbox margin">
+		<section class="panel panel-default">
+			<header class="panel-heading font-bold">Scratch</header>
+			<div class="panel-body">
+				<form class="create-form form-horizontal" ng-submit="submit();">
+					<div class="form-group">
+						<label class="form-col-2 form-control-label">Name</label>
+						<div class="form-col-10">
+							<input type="text" class="form-control" placeholder="Application 이름을 입력하세요" required />
+						</div>
+					</div>
+					<!--
+					<div class="form-group">
+						<label class="form-col-2 form-control-label">Icon</label>
+						<div class="form-col-10">
+							
+						</div>
+					</div>
+					-->
+					<div class="form-group">
+						<label class="form-col-2 form-control-label">Theme</label>
+						<div class="form-col-10">
+							<ul class="theme-select">
+								<li class="theme-border light-bg light-border fa fa-check first" ng-click="themeSelect($event, 'light');"></li>
+								<li class="theme-border stable-bg stable-border" ng-click="themeSelect($event, 'stable');"></li>
+								<li class="theme-border positive-bg positive-border" ng-click="themeSelect($event, 'positive');"></li>
+								<li class="theme-border calm-bg calm-border" ng-click="themeSelect($event, 'calm');"></li>
+								<li class="theme-border balanced-bg balanced-border" ng-click="themeSelect($event, 'balanced');"></li>
+								<li class="theme-border energized-bg energized-border" ng-click="themeSelect($event, 'energized');"></li>
+								<li class="theme-border assertive-bg assertive-border" ng-click="themeSelect($event, 'assertive');"></li>
+								<li class="theme-border royal-bg royal-border" ng-click="themeSelect($event, 'royal');"></li>
+								<li class="theme-border dark-bg dark-border" ng-click="themeSelect($event, 'dark');"></li>
+							</ul>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-col-2 form-control-label"></label>
+						<div class="form-col-10">
+							<button type="submit" class="btn btn-default">생 성</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+	</section>
+</section>

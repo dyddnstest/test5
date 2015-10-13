@@ -1,0 +1,11 @@
+<form ng-controller="radioboxGroupController">
+	<div class="form-group">
+		<button class="btn btn-plus" ng-click="addItem($event);"><i class="fa fa-plus-circle"></i></button>
+	</div>
+	<div class="form-group" ng-repeat="item in meta.items">
+		<input type="text" class="form-control input-padding-right" id="label-text" placeholder="텍스트를 입력하세요" ng-model="item.value"/>
+		<button class="btn btn-minus position-right-btn" ng-click="removeItem($index);"><i class="fa fa-minus-circle"></i></button>
+	</div>
+
+	<button type="submit" class="btn btn-danger" ng-click="removeComp($event);">Delete</button>
+</form>

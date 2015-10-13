@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>App Builder</title>
+	<link rel="stylesheet" type="text/css" href="./css/ionic.css" />
+	<link rel="stylesheet" type="text/css" href="./css/theme.css" />
+
+	<script type="text/javascript" src="./scripts/vendor/jquery/dist/jquery.min.js"></script>
+
+	<script type="text/javascript" src="./scripts/vendor/angular/angular.min.js"></script>
+
+	<script type="text/javascript" src="./scripts/vendor/angular-route/angular-route.min.js"></script>
+	<script type="text/javascript" src="./scripts/vendor/angular-resource/angular-resource.min.js"></script>
+
+	<script type="text/javascript" src="./scripts/vendor/moment/min/moment.min.js"></script>
+	<script type="text/javascript" src="./scripts/vendor/moment/min/locales.min.js"></script>
+
+	<link rel="stylesheet" href="./scripts/vendor/ngDialog/css/ngDialog.min.css">
+	<link rel="stylesheet" href="./scripts/vendor/ngDialog/css/ngDialog-theme-default.css">
+	<script type="text/javascript" src="./scripts/vendor/ngDialog/js/ngDialog.min.js"></script>
+
+	<script type="text/javascript" src="../scripts/vendor/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../scripts/vendor/angular-dragdrop.min.js"></script>
+	<script type="text/javascript" src="../scripts/vendor/ui-sortable/src/sortable.js"></script>
+	<link rel="stylesheet" href="../scripts/vendor/jquery-ui-1.11.4.custom/jquery-ui.min.css">
+
+	<script type="text/javascript" src="./scripts/vendor/ckeditor/ckeditor.js"></script>
+	<script type="text/javascript" src="./scripts/vendor/angular-ckeditor/angular-ckeditor.min.js"></script>
+
+	<link rel="stylesheet" href="./scripts/vendor/angular-bootstrap-colorpicker/css/colorpicker.min.css">
+	<script type="text/javascript" src="./scripts/vendor/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.min.js"></script>
+
+	<script type="text/javascript" src="./scripts/vendor/require.js" data-main="./scripts/main.js"></script>
+</head>
+<body>
+	<header class="bg-dark header">
+		<a href="#/" class="header-brand">App Builder - {{ projectName }}</a>
+	</header>
+	<section class="vbox">
+		<ng-view></ng-view>
+	</section>
+</body>
+</html>

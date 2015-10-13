@@ -1,0 +1,14 @@
+<form ng-controller="buttonController">
+	<div class="form-group">
+		<label for="label-text">Text</label>
+		<input type="text" class="form-control" id="label-text" placeholder="헤더 텍스트를 입력하세요." ng-model="meta.value">
+	</div>
+	<div class="form-group">
+		<label for="label-text">Theme</label>
+		<select class="form-control" ng-model="selectedTheme" ng-options="item for item in themes" ng-change="themeChange();">
+			
+		</select>
+	</div>
+
+	<button type="submit" class="btn btn-danger" ng-click="removeComp($event);">Delete</button>
+</form>

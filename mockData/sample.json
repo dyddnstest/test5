@@ -1,0 +1,21 @@
+{
+	"id": "",
+	"name": "",
+	"desc": "",
+	"theme": "",
+	"icon": "",
+	"views": [{
+		"id": "",
+		"type": "horizontal",
+		"columns": [{
+			"items": [{
+				"type": "input",
+				"value": "test",
+				"placeholder": "asdfasdf"
+			}, {
+				"type": "label",
+				"value": "aa"
+			}]
+		}]
+	}]
+}

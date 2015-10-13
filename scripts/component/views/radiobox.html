@@ -1,0 +1,17 @@
+<form ng-controller="radioboxController">
+	<div class="form-group">
+		<label for="checkbox-text">Checked</label>
+		<select class="form-control" ng-model="checked" ng-options="item for item in checkeds" ng-change="checkedChange();">
+			
+		</select>
+	</div>
+
+	<div class="form-group">
+		<label for="input-placeholder">Disabled</label>
+		<select class="form-control" ng-model="disabledItem" ng-options="item for item in disabledItems" ng-change="disabledChange();">
+			
+		</select>
+	</div>
+
+	<button type="submit" class="btn btn-danger" ng-click="removeComp($event);">Delete</button>
+</form>
