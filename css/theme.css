@@ -1086,7 +1086,6 @@ label{
 	background-color: rgb(201, 201, 201) !important;
 }
 
-
 .saveBtn{
 	position: absolute;
 	top: 10px;
@@ -1096,4 +1095,9 @@ label{
 .editPropertyPanel{
 	border-width: 0;
     border-top: 1px solid #e8e8e8;
+}
+
+.list{
+	border: 1px solid #e8e8e8;
+	min-height: 20px;
 }

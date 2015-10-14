@@ -34,12 +34,4 @@
 	"id": "0001",
 	"name": "Radiobox",
 	"type": "radiobox"
-},{
-	"id": "0001",
-	"name": "Checkbox Group",
-	"type": "checkboxGroup"
-},{
-	"id": "0001",
-	"name": "Radiobox Group",
-	"type": "radioboxGroup"
 }]

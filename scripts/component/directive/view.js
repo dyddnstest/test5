@@ -34,12 +34,20 @@ define([
 
 				$scope.onDragDrop = function(e, drop){
 					var el = drop.draggable;
-					if(el.data("compType") === "header" || el.data("compType") === "footer" || el.data("compType") === "view"){
+					var cls = "";
+					if(el.data("compType") === "header" || el.data("compType") === "view"){
 						return;
 					}
 
+					if(el.data("compType") === "checkboxGroup" || el.data("compType") === "radioboxGroup"){
+						cls = "comp-block";
+					}
+					else{
+						cls = "comp-inline";
+					}
+
 					var compType = "comp-" + el.data("compType");
-					var comp = $compile('<' + compType + ' parent="' + compId + '" class="comp comp-inline"></' + compType + '>')($scope.$new(true));
+					var comp = $compile('<' + compType + ' parent="' + compId + '" class="comp ' + cls + '"></' + compType + '>')($scope.$new(true));
 					elem.find(".row > .col").append(comp);
 				};
 
