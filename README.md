@@ -8,5 +8,6 @@ TOPAS 플랫폼의 기본 마이크로서비스어플리케이션을 생성하�
  * cd ~/x-AppBuilder
 3. 서비스 실행
  * harp server --port=9000
+ * harp server --p 9000
 4. 브라우저를 통한 접속 실행
  * localhost:9000
