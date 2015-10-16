@@ -18,6 +18,8 @@ define([
 		$("#design-area .panel-body").height(window.innerHeight - 120);
 		$("#editProperty").height(window.innerHeight - 120);
 
+		applicationMeta.clear();
+
 		$scope.components = [];
 		applicationService.getComponents().then(function(result){
 			$scope.components = result;
