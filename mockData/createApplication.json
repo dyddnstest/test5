@@ -1,6 +1,12 @@
 {
-	"id": "00001",
-	"name": "",
-	"desc": "",
-	"theme": "light"
+  "header": {
+    "code": 20000
+  },
+  "body": {
+    "name": "testApp",
+    "theme": "royal",
+    "icon": "royal.icon",
+    "appId": "EdVcYx5T3C",
+    "createdAt": "2015-10-17T07:20:52.769Z"
+  }
 }

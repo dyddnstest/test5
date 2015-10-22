@@ -1,0 +1,47 @@
+{
+"header": { "code": 20000 }, 
+"body": {
+        "name": "testApp",
+    "theme": "royal",
+    "icon": "royal.icon",
+    "appId": "EdVcYx5T3C",
+        "views":[{
+                "compId":"403125836013.8157",
+                "compType":"view",
+                "type":"",
+                "columns":[{
+                        "items":[{
+                                "compId":"955735971189.122",
+                                "compType":"label",
+                                "value":"title1",
+                                "fontSize":18,
+                                "color":"#000"
+                        },{
+                                "compId":"978992172331.0393",
+                                "compType":"button",
+                                "theme":"light",
+                                "value":"button1"
+                        }]
+                }]
+        },{
+                "compId":"18398781277.383892",
+                "compType":"view",
+                "type":"",
+                "columns":[{
+                        "items":[{
+                                "compId":"1371126397574.8528",
+                                "compType":"label",
+                                "value":"title2",
+                                "fontSize":12,
+                                "color":"#000"
+                        },{
+                                "compId":"410664841998.8878",
+                                "compType":"input",
+                                "type":"text",
+                                "value":"",
+                                "placeholder":"placeholder"
+                        }]
+                }]
+        }]
+}
+}

@@ -5,17 +5,17 @@ define([
 "../controller/buttonController.js"
 ], function (app) {
 	var directive = app.getApp().register.directive;
-	directive("compButton", ["$compile", "applicationConfig", "applicationMeta", function($compile, applicationConfig, applicationMeta){
+	directive("compButton", ["$compile", "applicationMeta", function($compile, applicationMeta){
 		return {
 			restrict: "E",
 			template: '<button class="comp-body button button-{{meta.theme}}">{{meta.value}}</button>',
 			link: function($scope, elem, attrs, ctrl){
 				var compId = applicationMeta.getUniqeId();
 				var parentId = attrs.parent;
-				$scope.meta = {
+				$scope.meta = elem.data("meta") ? JSON.parse(elem.data("meta")) : {
 					compId: compId,
 					compType: "button",
-					theme: applicationConfig.getTheme(),
+					theme: applicationMeta.getTheme(),
 					value: "버튼"
 				};
 

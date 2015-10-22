@@ -1,0 +1,43 @@
+{
+  "header": {
+    "code": 20000
+  },
+  "body": 
+	[{
+		"id": "0001",
+		"name": "View",
+		"type": "view"
+	},{
+		"id": "0001",
+		"name": "Header",
+		"type": "header"
+	},{
+		"id": "0001",
+		"name": "Label",
+		"type": "label"
+	},{
+		"id": "0001",
+		"name": "Button",
+		"type": "button"
+	},{
+		"id": "0001",
+		"name": "Input",
+		"type": "input"
+	},{
+		"id": "0001",
+		"name": "Textarea",
+		"type": "textarea"
+	},{
+		"id": "0001",
+		"name": "Select",
+		"type": "select"
+	},{
+		"id": "0001",
+		"name": "Checkbox",
+		"type": "checkbox"
+	},{
+		"id": "0001",
+		"name": "Radiobox",
+		"type": "radiobox"
+	}]
+}

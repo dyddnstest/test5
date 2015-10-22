@@ -19,8 +19,25 @@ define([
 			clear: function(){
 				meta = {
 					appId: "",
+					theme: "",
+					icon: "",
 					views: []
 				};
+			},
+			setAppId: function(appId){
+				meta.appId = appId;
+			},
+			setIcon: function(icon){
+				meta.icon = icon;
+			},
+			getIcon: function(){
+				return meta.icon;
+			},
+			setTheme: function(theme){
+				meta.theme = theme;
+			},
+			getTheme: function(){
+				return meta.theme;
 			},
 			addHeader: function(header){
 				meta.header = header;

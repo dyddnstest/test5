@@ -28,6 +28,9 @@ define([
 					//$urlRouterProvider.otherwise("/application");
 				}]);
 
+	//app.constant("REST_URL", "http://45.63.123.124:9000");
+	app.constant("REST_URL", "http://localhost:9000");
+
 	app.run(["$rootScope", function($rootScope) {
 
 	}]);

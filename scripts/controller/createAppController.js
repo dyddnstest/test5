@@ -1,19 +1,16 @@
 define([
 "app",
-"../service/applicationService.js",
-"../service/applicationConfig.js"
+"../service/applicationService.js"
 ], function (app) {
 	"use strict";
-	var injectParams = ["$scope", "$location", "applicationService", "applicationConfig"];
-	var Controller = function ($scope, $location, applicationService, applicationConfig) {
+	var injectParams = ["$scope", "$location", "applicationService"];
+	var Controller = function ($scope, $location, applicationService) {
 		$scope.theme = "light";
 		$scope.icon = "";
 
 		$scope.submit = function(){
 			applicationService.createApplication().then(function(result){
-				applicationConfig.setTheme(result.theme);
-
-				$location.path("/application/" + result.id);
+				$location.path("/application/" + result.body.appId);
 			}, function(){
 
 			});

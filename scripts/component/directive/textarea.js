@@ -12,7 +12,7 @@ define([
 			link: function($scope, elem, attrs, ctrl){
 				var compId = applicationMeta.getUniqeId();
 				var parentId = attrs.parent;
-				$scope.meta = {
+				$scope.meta = elem.data("meta") ? JSON.parse(elem.data("meta")) : {
 					compId: compId,
 					compType: "textarea",
 					value: "",

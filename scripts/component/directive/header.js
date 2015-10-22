@@ -5,7 +5,7 @@ define([
 "../controller/headerController.js"
 ], function (app) {
 	var directive = app.getApp().register.directive;
-	directive("compHeader", ["$compile", "applicationConfig", "applicationMeta", function($compile, applicationConfig, applicationMeta){
+	directive("compHeader", ["$compile", "applicationMeta", function($compile, applicationMeta){
 		return {
 			restrict: "E",
 			template: '<div class="comp-body bar bar-header bar-{{meta.theme}}"><h1 class="title">{{meta.value}}</h1></div>',
@@ -14,7 +14,7 @@ define([
 				$scope.meta = {
 					compId: compId,
 					compType: "header",
-					theme: applicationConfig.getTheme(),
+					theme: applicationMeta.getTheme(),
 					value: "헤더"
 				};
 

@@ -22,16 +22,15 @@ define([
 				+ '<div class="col" ui-sortable="{connectWith: \'.col\'}" data-drop="true" jqyoui-droppable="{onDrop: \'onDragDrop\'}" data-jqyoui-options="{accept: \'.dragItem\'}"></div>'
 				+ '</div>',
 			link: function($scope, elem, attrs, ctrl){
-				var compId = applicationMeta.getUniqeId();
-				$scope.meta = {
-					compId: compId,
+				$scope.meta = elem.data("meta") ? JSON.parse(elem.data("meta")) : {
+					compId: applicationMeta.getUniqeId(),
 					compType: "view",
-					type: "",
-					columns: [{ items: [] }]
+					type: ""
 				};
 
-				applicationMeta.addView($scope.meta);
+				$scope.meta.columns = [{ items: [] }];
 
+				applicationMeta.addView($scope.meta);
 				$scope.onDragDrop = function(e, drop){
 					var el = drop.draggable;
 					var cls = "";
@@ -47,7 +46,7 @@ define([
 					}
 
 					var compType = "comp-" + el.data("compType");
-					var comp = $compile('<' + compType + ' parent="' + compId + '" class="comp ' + cls + '"></' + compType + '>')($scope.$new(true));
+					var comp = $compile('<' + compType + ' parent="' + $scope.meta.compId + '" class="comp ' + cls + '"></' + compType + '>')($scope.$new(false));
 					elem.find(".row > .col").append(comp);
 				};
 
@@ -69,7 +68,7 @@ define([
 
 				$scope.removeComp = function(){
 					elem.remove();
-					applicationMeta.removeView(compId);
+					applicationMeta.removeView($scope.meta.compId);
 
 					$scope.$emit("removeComp");
 				};

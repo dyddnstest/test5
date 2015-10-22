@@ -1,7 +1,6 @@
 define([
 "app",
 "../service/applicationService.js",
-"../service/applicationConfig.js",
 "../service/applicationMeta.js",
 "../component/directive/view.js",
 "../component/directive/header.js"
@@ -22,7 +21,44 @@ define([
 
 		$scope.components = [];
 		applicationService.getComponents().then(function(result){
-			$scope.components = result;
+			$scope.components = result.body;
+		}, function(){ });
+
+		applicationService.getApplication().then(function(result){
+			applicationMeta.setAppId(result.body.appId);
+			applicationMeta.setIcon(result.body.icon);
+			applicationMeta.setTheme(result.body.theme);
+			var views = result.body.views;
+			var view = null;
+			var column = null;
+			var item = null;
+			for(var i=0; i<views.length; i++){
+				view = views[i];
+				var viewComp = $compile('<comp-view class="comp comp-view comp-block"></comp-view>')($scope.$new(false), function(el){
+					el.data("meta", JSON.stringify(view));
+				});
+				angular.element(".content").append(viewComp);
+
+				for(var j=0; j<views[i].columns.length; j++){
+					column = views[i].columns[j];
+					for(var k=0; k<column.items.length; k++){
+						item = column.items[k];
+
+						var cls = "";
+						if(item.compType === "checkboxGroup" || item.compType === "radioboxGroup"){
+							cls = "comp-block";
+						}
+						else{
+							cls = "comp-inline";
+						}
+
+						var itemComp = $compile('<comp-' + item.compType + ' parent="' + view.compId + '" class="comp ' + cls + '"></' + item.compType + '>')($scope.$new(false), function(el){
+							el.data("meta", JSON.stringify(item));
+						});
+						viewComp.find(".row > .col").append(itemComp);
+					}
+				}
+			}
 		}, function(){ });
 
 		$scope.onDragStart = function (e, drag) {
@@ -36,7 +72,7 @@ define([
 				comp = $compile("<comp-header></comp-header>")($scope.$new(true));
 				angular.element(e.target).prepend(comp);
 
-				angular.element(".content").addClass("has-header");
+				angular.element(".contenapplicationMeta.addt").addClass("has-header");
 				return;
 			}
 
@@ -59,6 +95,12 @@ define([
 
 		$scope.saveApp = function(){
 			console.log(applicationMeta.getMeta());
+		};
+
+		$scope.viewSortUpate = function(){
+			debugger;
+			//applicationMeta.clear();
+			//applicationMeta.addView($scope.viewsMeta);
 		};
 	};
 
