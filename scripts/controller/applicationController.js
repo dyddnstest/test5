@@ -6,8 +6,8 @@ define([
 "../component/directive/header.js"
 ], function (app) {
 	"use strict";
-	var injectParams = ["$scope", "$location", "$compile", "applicationService", "applicationMeta"];
-	var Controller = function ($scope, $location, $compile, applicationService, applicationMeta) {
+	var injectParams = ["$scope", "$routeParams", "$location", "$compile", "applicationService", "applicationMeta"];
+	var Controller = function ($scope, $routeParams, $location, $compile, applicationService, applicationMeta) {
 		window.onresize = function(){
 			$("#comp-list").height(window.innerHeight - 50);
 			$("#design-area .panel-body").height(window.innerHeight - 120);
@@ -24,7 +24,7 @@ define([
 			$scope.components = result.body;
 		}, function(){ });
 
-		applicationService.getApplication().then(function(result){
+		applicationService.getApplication($routeParams.appId).then(function(result){
 			applicationMeta.setAppId(result.body.appId);
 			applicationMeta.setIcon(result.body.icon);
 			applicationMeta.setTheme(result.body.theme);

@@ -18,6 +18,8 @@ define([
 
 					$httpProvider.defaults.useXDomain = true;
 					$httpProvider.defaults.withCredentials = true;
+					//$httpProvider.defaults.headers.common.contentType = "application/json";
+					//$httpProvider.defaults.headers.common.Accept = "application/json, text/javascript, */*";
 					delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
 					var route = routeResolverProvider.route;
@@ -25,11 +27,11 @@ define([
 						.when("/", route.resolve("createApp"))
 						.when("/application/:appId", route.resolve("application"))
 					
-					//$urlRouterProvider.otherwise("/application");
+					$routeProvider.otherwise("/");
 				}]);
 
-	//app.constant("REST_URL", "http://45.63.123.124:9000");
-	app.constant("REST_URL", "http://localhost:9000");
+	app.constant("REST_URL", "http://45.63.123.124:9000");
+	//app.constant("REST_URL", "http://localhost:9000");
 
 	app.run(["$rootScope", function($rootScope) {
 

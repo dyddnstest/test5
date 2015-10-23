@@ -16,7 +16,7 @@ define([
 	var Service = function($http, $q, REST_URL, serviceError){
 		this.getComponents = function(){
 			return $q(function(resolve, reject){
-				$http.get(REST_URL + "/mockData/getComponents.json").success(function(result){
+				$http.get(window.location.origin + "/mockData/getComponents.json").success(function(result){
 					SuccessDelegate(result, resolve, reject, serviceError);
 				}).error(function(result, httpCode){
 					serviceError.httpErrorThrowing(httpCode);
@@ -28,8 +28,8 @@ define([
 
 		this.createApplication = function(){
 			return $q(function(resolve, reject){
-				$http.get(REST_URL + "/mockData/createApplication.json").success(function(result){
-				//$http.post(REST_URL + "/AppMain").success(function(result){
+				//$http.get(REST_URL + "/mockData/createApplication.json").success(function(result){
+				$http.post(REST_URL + "/AppMain").success(function(result){
 					SuccessDelegate(result, resolve, reject, serviceError);
 				}).error(function(result, httpCode){
 					serviceError.httpErrorThrowing(httpCode);
@@ -39,10 +39,10 @@ define([
 			});
 		};
 
-		this.getApplication = function(){
+		this.getApplication = function(id){
 			return $q(function(resolve, reject){
-				$http.get(REST_URL + "/mockData/getApplication.json").success(function(result){
-				//$http.post(REST_URL + "/AppMain").success(function(result){
+				//$http.get(REST_URL + "/mockData/getApplication.json").success(function(result){
+				$http.get(REST_URL + "/AppMain/" + id).success(function(result){
 					SuccessDelegate(result, resolve, reject, serviceError);
 				}).error(function(result, httpCode){
 					serviceError.httpErrorThrowing(httpCode);
