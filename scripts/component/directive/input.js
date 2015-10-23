@@ -20,6 +20,7 @@ define([
 					placeholder: "입력하세요",
 					disabled: false
 				};
+				elem.attr("id", $scope.meta.compId);
 
 				applicationMeta.addItem(parentId, $scope.meta);
 

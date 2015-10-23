@@ -19,6 +19,7 @@ define([
 					placeholder: "입력하세요",
 					disabled: false
 				};
+				elem.attr("id", $scope.meta.compId);
 
 				$scope.removeComp = function(){
 					elem.remove();

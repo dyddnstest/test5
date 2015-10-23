@@ -17,6 +17,7 @@ define([
 					compType: "select",
 					items: []
 				};
+				elem.attr("id", $scope.meta.compId);
 
 				$scope.removeComp = function(){
 					elem.remove();

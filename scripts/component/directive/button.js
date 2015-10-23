@@ -18,6 +18,7 @@ define([
 					theme: applicationMeta.getTheme(),
 					value: "버튼"
 				};
+				elem.attr("id", $scope.meta.compId);
 
 				applicationMeta.addItem(parentId, $scope.meta);
 

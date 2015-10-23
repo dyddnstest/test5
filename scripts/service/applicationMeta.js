@@ -93,6 +93,37 @@ define([
 			},
 			getUniqeId: function(){
 				return guid();
+			},
+			updateViews: function(array){
+				var newViews = [];
+				for(var i=0; i<array.length; i++){
+					for(var j=0; j<meta.views.length; j++){
+						if(array[i] === meta.views[j].compId){
+							newViews.push(meta.views[j]);
+						}
+					}
+				}
+				meta.views = newViews;
+			},
+			updateItems: function(viewId, array){
+				var newItems = [];
+				var view = null;
+				for(var i=0; i<meta.views.length; i++){
+					if(viewId === meta.views[i].compId){
+						view = meta.views[i];
+						break;
+					}
+				}
+
+				for(var i=0; i<array.length; i++){
+					for(var j=0; j<view.columns[0].items.length; j++){
+						if(array[i] === view.columns[0].items[j].compId){
+							newItems.push(view.columns[0].items[j]);
+						}
+					}
+				}
+
+				view.columns[0].items = newItems;
 			}
 		};
 	};

@@ -23,6 +23,7 @@ define([
 					compType: "radioboxgroup",
 					items: []
 				};
+				elem.attr("id", $scope.meta.compId);
 
 				elem.on("click", function(){
 					$(".comp-selection").removeClass("comp-selection");

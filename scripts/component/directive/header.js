@@ -17,6 +17,7 @@ define([
 					theme: applicationMeta.getTheme(),
 					value: "헤더"
 				};
+				elem.attr("id", $scope.meta.compId);
 
 				applicationMeta.addHeader($scope.meta);
 

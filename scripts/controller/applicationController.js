@@ -69,7 +69,7 @@ define([
 			var el = drop.draggable;
 
 			if(el.data("compType") === "header"){
-				comp = $compile("<comp-header></comp-header>")($scope.$new(true));
+				comp = $compile("<comp-header></comp-header>")($scope.$new(false));
 				angular.element(e.target).prepend(comp);
 
 				angular.element(".contenapplicationMeta.addt").addClass("has-header");
@@ -97,10 +97,10 @@ define([
 			console.log(applicationMeta.getMeta());
 		};
 
-		$scope.viewSortUpate = function(){
-			debugger;
-			//applicationMeta.clear();
-			//applicationMeta.addView($scope.viewsMeta);
+		//view 의 순서가 바뀔경우
+		$scope.viewSortUpdate = function(){
+			var array = $("#mainSortable").sortable("toArray");
+			applicationMeta.updateViews(array);
 		};
 	};
 

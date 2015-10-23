@@ -18,6 +18,7 @@ define([
 					checked: false,
 					disabled: false
 				};
+				elem.attr("id", $scope.meta.compId);
 
 				applicationMeta.addItem(parentId, $scope.meta);
 

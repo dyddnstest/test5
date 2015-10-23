@@ -19,7 +19,7 @@ define([
 		return {
 			restrict: "E",
 			template: '<div class="row">'
-				+ '<div class="col" ui-sortable="{connectWith: \'.col\'}" data-drop="true" jqyoui-droppable="{onDrop: \'onDragDrop\'}" data-jqyoui-options="{accept: \'.dragItem\'}"></div>'
+				+ '<div class="col" ui-sortable="{connectWith: \'.col\'}" data-drop="false" jqyoui-droppable="{onDrop: \'onDragDrop\'}" data-jqyoui-options="{accept: \'.dragItem\'}"></div>'
 				+ '</div>',
 			link: function($scope, elem, attrs, ctrl){
 				$scope.meta = elem.data("meta") ? JSON.parse(elem.data("meta")) : {
@@ -27,6 +27,7 @@ define([
 					compType: "view",
 					type: ""
 				};
+				elem.attr("id", $scope.meta.compId)
 
 				$scope.meta.columns = [{ items: [] }];
 
@@ -49,6 +50,12 @@ define([
 					var comp = $compile('<' + compType + ' parent="' + $scope.meta.compId + '" class="comp ' + cls + '"></' + compType + '>')($scope.$new(false));
 					elem.find(".row > .col").append(comp);
 				};
+
+				//view 안의 컴포넌트 들의 순서가 바뀔 경우
+				elem.find(".col").eq(0).on( "sortupdate", function( event, ui ) {
+					var array = elem.find(".col").eq(0).sortable("toArray");
+					applicationMeta.updateItems($scope.meta.compId, array);
+				});
 
 				elem.on("click", function(){
 					$(".selection").removeClass("selection");

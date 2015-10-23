@@ -20,6 +20,7 @@ define([
 					compType: "webEditor",
 					value: "타이틀을 입력하세요."
 				};
+				elem.attr("id", $scope.meta.compId);
 
 				$scope.removeComp = function(){
 					elem.remove();

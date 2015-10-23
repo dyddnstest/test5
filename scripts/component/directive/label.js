@@ -20,6 +20,7 @@ define([
 					fontWeight: "normal",
 					color: "#000"
 				};
+				elem.attr("id", $scope.meta.compId);
 
 				applicationMeta.addItem(parentId, $scope.meta);
 
