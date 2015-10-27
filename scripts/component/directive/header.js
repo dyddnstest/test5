@@ -11,6 +11,7 @@ define([
 			template: '<div class="comp-body bar bar-header bar-{{meta.theme}}"><h1 class="title">{{meta.value}}</h1></div>',
 			link: function($scope, elem, attrs, ctrl){
 				var compId = applicationMeta.getUniqeId();
+				var parentId = attrs.parent;
 				$scope.meta = {
 					compId: compId,
 					compType: "header",

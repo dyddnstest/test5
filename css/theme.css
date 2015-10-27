@@ -1046,6 +1046,10 @@ label{
 	background-color: #374b5e;
 }
 
+comp-header{
+	height: 44px;
+	display: block;
+}
 
 .comp{
 	padding: 10px;

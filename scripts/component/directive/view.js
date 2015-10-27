@@ -19,7 +19,7 @@ define([
 		return {
 			restrict: "E",
 			template: '<div class="row">'
-				+ '<div class="col" ui-sortable="{connectWith: \'.col\'}" data-drop="false" jqyoui-droppable="{onDrop: \'onDragDrop\'}" data-jqyoui-options="{accept: \'.dragItem\'}"></div>'
+				+ '<div class="col" ui-sortable="{connectWith: \'.col\'}" data-drop="true" jqyoui-droppable="{onDrop: \'onDragDrop\'}" data-jqyoui-options="{accept: \'.dragItem\'}"></div>'
 				+ '</div>',
 			link: function($scope, elem, attrs, ctrl){
 				$scope.meta = elem.data("meta") ? JSON.parse(elem.data("meta")) : {

@@ -40,8 +40,6 @@ define([
 					
 					reject();
 				});
-
-
 			});
 		};
 
@@ -49,7 +47,7 @@ define([
 			return $q(function(resolve, reject){
 				$http({
 					method: "put",
-					url: REST_URL + "/AppMain",
+					url: REST_URL + "/AppMain/" + data.appId,
 					data: $.param(data),
 					headers : {"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"}
 				}).success(function(result){
