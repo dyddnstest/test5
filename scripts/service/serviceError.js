@@ -27,8 +27,8 @@ define([
 		};
 
 		function appErrorThrowing(errorCode){
-			if(SERVER_ERR_MSG[httpCode]){
-				alert(SERVER_ERR_MSG[httpCode]);
+			if(SERVER_ERR_MSG[errorCode]){
+				alert(SERVER_ERR_MSG[errorCode]);
 			}
 			else{
 				alert(SERVER_ERR_MSG["unknown"]);

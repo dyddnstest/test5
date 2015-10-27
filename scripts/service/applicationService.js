@@ -13,7 +13,7 @@ define([
 		reject()
 	}
 
-	var Service = function($http, $q, REST_URL, serviceError){
+	var Service = function($http, $q, REST_URL, $httpParamSerializerJQLike, serviceError){
 		this.getComponents = function(){
 			return $q(function(resolve, reject){
 				$http.get(window.location.origin + "/mockData/getComponents.json").success(function(result){
@@ -26,12 +26,32 @@ define([
 			});
 		};
 
-		this.createApplication = function(){
+		this.createApplication = function(data){
 			return $q(function(resolve, reject){
-				//$http.get(REST_URL + "/mockData/createApplication.json").success(function(result){
-				$http.post(REST_URL + "/AppMain").success(function(result){
+				$http({
+					method: "post",
+					url: REST_URL + "/AppMain",
+					data: $.param(data),
+					headers : {"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"}
+				}).success(function(result){
 					SuccessDelegate(result, resolve, reject, serviceError);
 				}).error(function(result, httpCode){
+					serviceError.httpErrorThrowing(httpCode);
+					
+					reject();
+				});
+
+
+			});
+		};
+
+		this.getApplications = function(){
+			return $q(function(resolve, reject){
+				$http.get(REST_URL + "/AppMain").success(function(result){
+					debugger;
+					SuccessDelegate(result, resolve, reject, serviceError);
+				}).error(function(result, httpCode){
+					debugger;
 					serviceError.httpErrorThrowing(httpCode);
 					
 					reject();
@@ -53,6 +73,6 @@ define([
 		};
 	};
 
-	Service.$inject = ["$http", "$q", "REST_URL", "serviceError"];
+	Service.$inject = ["$http", "$q", "REST_URL", "$httpParamSerializerJQLike", "serviceError"];
 	app.getApp().register.service("applicationService", Service);
 });

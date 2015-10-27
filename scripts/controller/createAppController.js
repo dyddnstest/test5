@@ -5,11 +5,14 @@ define([
 	"use strict";
 	var injectParams = ["$scope", "$location", "applicationService"];
 	var Controller = function ($scope, $location, applicationService) {
-		$scope.theme = "light";
-		$scope.icon = "";
+		$scope.data = {
+			name: "",
+			theme: "light",
+			icon: ""
+		};
 
 		$scope.submit = function(){
-			applicationService.createApplication().then(function(result){
+			applicationService.createApplication($scope.data).then(function(result){
 				$location.path("/application/" + result.body.appId);
 			}, function(){
 
@@ -20,7 +23,7 @@ define([
 			$(".theme-select li").removeClass("fa fa-check");
 			$($event.target).addClass("fa fa-check");
 
-			$scope.theme = theme;
+			$scope.data.theme = theme;
 		};
 	};
 
