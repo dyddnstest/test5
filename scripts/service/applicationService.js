@@ -31,8 +31,8 @@ define([
 				$http({
 					method: "post",
 					url: REST_URL + "/AppMain",
-					data: $.param(data),
-					headers : {"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"}
+					data: data/*,
+					headers : {"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"}*/
 				}).success(function(result){
 					SuccessDelegate(result, resolve, reject, serviceError);
 				}).error(function(result, httpCode){
@@ -48,8 +48,7 @@ define([
 				$http({
 					method: "put",
 					url: REST_URL + "/AppMain/" + data.appId,
-					data: $.param(data),
-					headers : {"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"}
+					data: data
 				}).success(function(result){
 					SuccessDelegate(result, resolve, reject, serviceError);
 				}).error(function(result, httpCode){
