@@ -45,13 +45,30 @@ define([
 			});
 		};
 
+		this.saveApplication = function(data){
+			return $q(function(resolve, reject){
+				$http({
+					method: "put",
+					url: REST_URL + "/AppMain",
+					data: $.param(data),
+					headers : {"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"}
+				}).success(function(result){
+					SuccessDelegate(result, resolve, reject, serviceError);
+				}).error(function(result, httpCode){
+					serviceError.httpErrorThrowing(httpCode);
+					
+					reject();
+				});
+
+
+			});
+		};
+
 		this.getApplications = function(){
 			return $q(function(resolve, reject){
 				$http.get(REST_URL + "/AppMain").success(function(result){
-					debugger;
 					SuccessDelegate(result, resolve, reject, serviceError);
 				}).error(function(result, httpCode){
-					debugger;
 					serviceError.httpErrorThrowing(httpCode);
 					
 					reject();

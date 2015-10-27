@@ -94,7 +94,11 @@ define([
 		});
 
 		$scope.saveApp = function(){
-			console.log(applicationMeta.getMeta());
+			applicationService.saveApplication(applicationMeta.getMeta()).then(function(){
+				//저장 성공
+			}, function(){
+				//저장 실패
+			});
 		};
 
 		//view 의 순서가 바뀔경우
