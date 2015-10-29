@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "displayName": "Appbuiler",
   "description": "AngularJS Appbuilder",
-  "author": "Çã¿µ³² <cryingnavi@gmail.com>",
+  "author": "í—ˆì˜ë‚¨ <cryingnavi@gmail.com>",
   "licenses": [
     {
       "type": "AGPL v3",
@@ -14,5 +14,5 @@
     "type": "git",
     "url": "http://1.234.69.71/HeoYounUn/sample_delete.git"
   },
-  "main": "index.html"
+  "main": "server.coffee"
 }
