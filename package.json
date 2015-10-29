@@ -14,5 +14,12 @@
     "type": "git",
     "url": "http://1.234.69.71/HeoYounUn/sample_delete.git"
   },
-  "main": "server.coffee"
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "~4.13.3"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "main": "server.js"
 }
