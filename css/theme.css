@@ -730,6 +730,15 @@ label{
     float: none;
 }
 
+.content{
+	padding: 15px;
+}
+
+.main-panel-body{
+	padding: 15px;
+	height: 200px;
+}
+
 .panel{
 	border-radius: 2px;
 	margin-bottom: 20px;
@@ -759,7 +768,6 @@ label{
 }
 
 .panel-body {
-    padding: 15px;
     position: relative;
     overflow: auto;
 }
@@ -936,6 +944,23 @@ label{
 }
 
 
+.app-list{
+	width: 100%;
+}
+
+
+.app-list tr{
+	height: 40px;
+	border-bottom: 1px solid #eee;
+}
+
+.app-list tr td{
+	vertical-align: middle;
+}
+
+.app-list tr td.text-right{
+	text-align: right;
+}
 
 .hbox > aside, .hbox > section {
     display: table-cell;

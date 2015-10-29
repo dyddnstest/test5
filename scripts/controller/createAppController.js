@@ -11,6 +11,13 @@ define([
 			icon: ""
 		};
 
+		$scope.appList = [];
+		applicationService.getApplications().then(function(result){
+			$scope.appList = result.body.list;
+		}, function(){
+
+		});
+
 		$scope.submit = function(){
 			applicationService.createApplication($scope.data).then(function(result){
 				$location.path("/application/" + result.body.appId);

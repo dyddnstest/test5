@@ -96,8 +96,10 @@ define([
 		$scope.saveApp = function(){
 			applicationService.saveApplication(applicationMeta.getMeta()).then(function(){
 				//저장 성공
+				alert("저장 되었습니다.");
 			}, function(){
 				//저장 실패
+				alert("저장에 실패 했습니다.");
 			});
 		};
 
