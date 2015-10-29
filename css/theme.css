@@ -734,8 +734,11 @@ label{
 	padding: 15px;
 }
 
-.main-panel-body{
+.padding-body{
 	padding: 15px;
+}
+
+.main-panel-body{
 	height: 200px;
 }
 

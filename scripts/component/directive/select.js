@@ -19,6 +19,8 @@ define([
 				};
 				elem.attr("id", $scope.meta.compId);
 
+				applicationMeta.addItem(parentId, $scope.meta);
+
 				$scope.removeComp = function(){
 					elem.remove();
 					applicationMeta.removeItem(parentId, compId);
