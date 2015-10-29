@@ -1,0 +1,18 @@
+{
+  "name": "x-Appbuilder",
+  "version": "0.0.1",
+  "displayName": "Appbuiler",
+  "description": "AngularJS Appbuilder",
+  "author": "Çã¿µ³² <cryingnavi@gmail.com>",
+  "licenses": [
+    {
+      "type": "AGPL v3",
+      "url": "http://www.gnu.org/licenses/agpl-3.0.html"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://1.234.69.71/HeoYounUn/sample_delete.git"
+  },
+  "main": "index.html"
+}
