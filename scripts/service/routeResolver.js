@@ -6,8 +6,8 @@ define([], function () {
 		};
 		
 		var routeConfig = function () {
-			var viewsDirectory = "/views/",
-				controllersDirectory = "/scripts/controller/",
+			var viewsDirectory = "./views/",
+				controllersDirectory = "./scripts/controller/",
 
 			setBaseDirectories = function (viewsDir, controllersDir) {
 				viewsDirectory = viewsDir;
