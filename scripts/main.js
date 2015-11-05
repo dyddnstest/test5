@@ -1,7 +1,6 @@
 "use strict";
 
 require.config({
-	baseUrl: "apps/test5", 
 	paths: {
 		'text': 'vendor/text'
 	}
