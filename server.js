@@ -8,3 +8,5 @@ var server = http.createServer(app).listen(port, host, function() {
 });
 app.use(express.static(__dirname+'/'));
 console.log("Start use..............");
+
+console.log("test1");
