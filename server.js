@@ -10,3 +10,5 @@ app.use(express.static(__dirname+'/'));
 console.log("Start use..............");
 
 console.log("test1");
+console.log("test2");
+
